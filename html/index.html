@@ -30,20 +30,20 @@
   </div>
 </div>
 <script>
-    // Charger les traductions depuis le fichier JSON
-    let translations = {};
-    fetch('translations.json')
-        .then(response => response.json())
-        .then(data => {
+  // Charger les traductions depuis le fichier JSON
+  let translations = {};
+  fetch('translations.json')
+          .then(response => response.json())
+          .then(data => {
             translations = data;
             initComponents('fr'); // Par défaut, nous chargeons les traductions en français
-        })
-        .catch(error => console.error('Error loading translations:', error));
+          })
+          .catch(error => console.error('Error loading translations:', error));
 
-    // Header Component
-    function createHeader(lang) {
-        const t = translations[lang].header;
-        return `
+  // Header Component
+  function createHeader(lang) {
+    const t = translations[lang].header;
+    return `
           <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#363636] px-10 py-3">
             <div class="flex items-center gap-4 text-white">
               <div class="size-4">
@@ -70,12 +70,12 @@
             </div>
           </header>
         `;
-    }
+  }
 
-    // Hero Section Component
-    function createHero(lang) {
-        const t = translations[lang].hero;
-        return `
+  // Hero Section Component
+  function createHero(lang) {
+    const t = translations[lang].hero;
+    return `
           <div class="px-40 flex flex-1 justify-center py-5">
             <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
               <div class="@container">
@@ -103,12 +103,12 @@
             </div>
           </div>
         `;
-    }
+  }
 
-    // About Me Section Component
-    function createAboutMe(lang) {
-        const t = translations[lang].aboutMe;
-        return `
+  // About Me Section Component
+  function createAboutMe(lang) {
+    const t = translations[lang].aboutMe;
+    return `
           <section class="about-me">
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
             <div class="flex p-4 @container">
@@ -129,56 +129,95 @@
             </div>
           </section>
         `;
-    }
+  }
 
-    // Skills Section Component
-    function createSkills(lang) {
-        const t = translations[lang].skills;
-        const skills = [
-            { name: t.javascript, level: "4/5", icon: "Code" },
-            { name: 'PHP', level: "4/5", icon: "Code" },
-            // Ajoutez d'autres compétences ici
-        ];
-        let skillsHTML = `
-          <section class="skills">
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+  // Skills Section Component
+  function createSkills(lang) {
+    const t = translations[lang].skills;
+    const skills = [
+      {
+        category: "Languages",
+        skills: [
+          { name: 'javascript', level: "4/5", icon: "Code" },
+          { name: 'PHP', level: "4/5", icon: "Code" },
+          { name: 'Python', level: "3/5", icon: "Code" },
+          { name: 'Java', level: "2/5", icon: "Code" },
+          { name: 'C++', level: "2/5", icon: "Code" },
+          { name: 'Ruby', level: "2/5", icon: "Code" },
+          { name: 'Go', level: "1/5", icon: "Code" }
+        ]
+      },
+      {
+        category: "Frameworks",
+        skills: [
+          { name: 'React', level: "3/5", icon: "Code" },
+          { name: 'nodejs', level: "3/5", icon: "Code" },
+          { name: 'Django', level: "2/5", icon: "Code" },
+          { name: 'Flask', level: "2/5", icon: "Code" },
+          { name: 'Spring', level: "2/5", icon: "Code" },
+          { name: 'Rails', level: "2/5", icon: "Code" },
+          { name: 'Express', level: "2/5", icon: "Code" }
+        ]
+      },
+      // Ajoutez d'autres catégories ici
+    ];
+
+    let skillsHTML = `
+            <section class="skills">
+                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
         `;
-        skills.forEach(skill => {
-            skillsHTML += `
-            <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center">
-              <div class="text-white" data-icon="${skill.icon}" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
-                  ></path>
-                </svg>
-              </div>
-              <h2  class="text-white text-base font-bold leading-tight">${skill.name} (${skill.level})</h2>
-            </div>
-          `;
-        });
+
+    // Pour chaque catégorie, créer une section
+    skills.forEach(category => {
+      skillsHTML += `
+                <div class="category">
+                    <h3 class="text-white text-lg font-bold leading-tight px-4 pb-3 pt-5">${category.category}</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-3 p-4">
+            `;
+
+      // Pour chaque ligne de compétences, créer une ligne
+      category.skills.forEach(skill => {
         skillsHTML += `
-            </div>
-          </section>
-        `;
-        return skillsHTML;
-    }
+                    <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center max-w-xs">
+                        <div class="text-white" data-icon="${skill.icon}" data-size="24px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                <path
+                                    d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-white text-base font-bold leading-tight">${skill.name} (${skill.level})</h2>
+                    </div>
+                `;
+      });
 
-    // Passions Section Component
-    function createPassions(lang) {
-        const t = translations[lang].passions;
-        const passions = [
-            { name: t.hiking, icon: "Mountains" },
-            // Ajoutez d'autres passions ici
-        ];
-        let passionsHTML = `
+      skillsHTML += `
+                    </div>
+                </div>
+            `;
+    });
+
+    skillsHTML += `
+            </section>
+        `;
+
+    return skillsHTML;
+  }
+
+  // Passions Section Component
+  function createPassions(lang) {
+    const t = translations[lang].passions;
+    const passions = [
+      { name: t.hiking, icon: "Mountains" },
+      // Ajoutez d'autres passions ici
+    ];
+    let passionsHTML = `
           <section class="passions">
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
         `;
-        passions.forEach(passion => {
-            passionsHTML += `
+    passions.forEach(passion => {
+      passionsHTML += `
             <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center">
               <div class="text-white" data-icon="${passion.icon}" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -190,18 +229,18 @@
               <h2 class="text-white text-base font-bold leading-tight">${passion.name}</h2>
             </div>
           `;
-        });
-        passionsHTML += `
+    });
+    passionsHTML += `
             </div>
           </section>
         `;
-        return passionsHTML;
-    }
+    return passionsHTML;
+  }
 
-    // Contact Section Component
-    function createContact(lang) {
-        const t = translations[lang].contact;
-        return `
+  // Contact Section Component
+  function createContact(lang) {
+    const t = translations[lang].contact;
+    return `
           <section class="contact">
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
@@ -223,37 +262,31 @@
             </div>
           </section>
         `;
-    }
+  }
 
-    // Featured Projects Section Component
-    function createFeaturedProjects(lang) {
-        const t = translations[lang].featuredProjects;
-        const projects = [
-            {
-                name: t.projectZenith.name,
-                description: t.projectZenith.description,
-                imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
-            },
-
-          {
-            name: t.projectZenith.name,
-            description: t.projectZenith.description,
-            imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
-          },
-
-          {
-            name: t.projectZenith.name,
-            description: t.projectZenith.description,
-            imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
-          },
-            // Ajoutez d'autres projets ici
-        ];
-        let projectsHTML = `
+  // Featured Projects Section Component
+  function createFeaturedProjects(lang) {
+    const t = translations[lang].featuredProjects;
+    const projects = [
+      {
+        name: t.projectZenith.name,
+        description: t.projectZenith.description,
+        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
+      },
+      {            name: t.projectZenith.name,
+        description: t.projectZenith.description,
+        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"          },
+      {            name: t.projectZenith.name,
+        description: t.projectZenith.description,
+        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"          },
+      // Ajoutez d'autres projets ici
+    ];
+    let projectsHTML = `
           <section class="featured-projects">
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
         `;
-        projects.forEach(project => {
-            projectsHTML += `
+    projects.forEach(project => {
+      projectsHTML += `
             <div class="p-4 @container ">
               <div class=" projectContainer flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
                 <div
@@ -275,16 +308,16 @@
               </div>
             </div>
           `;
-        });
-        projectsHTML += `
+    });
+    projectsHTML += `
           </section>
         `;
-        return projectsHTML;
-    }
+    return projectsHTML;
+  }
 
-    // Footer Component
-    function createFooter() {
-        return `
+  // Footer Component
+  function createFooter() {
+    return `
           <footer class="flex justify-center">
             <div class="flex max-w-[960px] flex-1 flex-col">
               <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
@@ -303,19 +336,19 @@
             </div>
           </footer>
         `;
-    }
+  }
 
-    // Fonction pour initialiser les composants
-    function initComponents(lang) {
-        document.getElementById('header').innerHTML = createHeader(lang);
-        document.getElementById('hero').innerHTML = createHero(lang);
-        document.getElementById('about-me').innerHTML = createAboutMe(lang);
-        document.getElementById('skills').innerHTML = createSkills(lang);
-        document.getElementById('passions').innerHTML = createPassions(lang);
-        document.getElementById('contact').innerHTML = createContact(lang);
-        document.getElementById('featured-projects').innerHTML = createFeaturedProjects(lang);
-        document.getElementById('footer').innerHTML = createFooter();
-    }
+  // Fonction pour initialiser les composants
+  function initComponents(lang) {
+    document.getElementById('header').innerHTML = createHeader(lang);
+    document.getElementById('hero').innerHTML = createHero(lang);
+    document.getElementById('about-me').innerHTML = createAboutMe(lang);
+    document.getElementById('skills').innerHTML = createSkills(lang);
+    document.getElementById('passions').innerHTML = createPassions(lang);
+    document.getElementById('contact').innerHTML = createContact(lang);
+    document.getElementById('featured-projects').innerHTML = createFeaturedProjects(lang);
+    document.getElementById('footer').innerHTML = createFooter();
+  }
 </script>
 </body>
 </html>
