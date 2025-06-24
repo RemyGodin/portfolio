@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('contenue/bebas_neue/BebasNeue-Regular.woff') format('woff2'),
+    url('html/contenue/bebas_neue/BebasNeue-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* styles.css */
+body {
+    font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+.root-container {
+    font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+}
+
+#titleHero{
+    font-size: 100px;
+    letter-spacing: 5px;
+}
+
+.projectContainer{
+    background-color: white;
+    margin-inside: 150px;
+}
+/* Style pour la section Hero */
+.hero-section {
+    /* background-image: url('https://img.freepik.com/photos-gratuite/composition-abstraite-lumiere-ultraviolette-uv_23-2149243965.jpg?semt=ais_items_boosted&w=740');*/
+    /* background-image: linear-gradient(rgba(244, 185, 64, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), */
+    background-color: #f4b940;
+    font-family: 'BebasNeue', sans-serif;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+
+
+/* Style pour l'image de profil dans la section About Me */
+.profile-image {
+    background-image: url("contenue/me.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Style pour l'image du projet dans la section Featured Projects */
+.project-image {
+    /*  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM");*/
+     background-color: #f4b940;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ /* Autres styles globaux */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+}

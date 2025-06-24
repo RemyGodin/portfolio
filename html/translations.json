@@ -1,0 +1,85 @@
+
+{
+  "fr": {
+    "header": {
+      "title": "Godin Rémy",
+      "projects": "Projects",
+      "skills": "Skills",
+      "contact": "Contact",
+      "resume": "Resume"
+    },
+    "hero": {
+      "title": "Godin Rémy",
+      "subtitle": "Lead Web Developer",
+      "button": "View Projects"
+    },
+    "aboutMe": {
+      "title": "About Me",
+      "name": "Godin Rémy",
+      "role": "Lead Web Developer",
+      "description": "I'm a passionate web developer with a focus on creating innovative and user-friendly web applications. My goal is to blend technical expertise with creative design to deliver exceptional digital experiences."
+    },
+    "skills": {
+      "title": "Skills",
+      "javascript": "JavaScript"
+    },
+    "passions": {
+      "title": "Passions",
+      "hiking": "Hiking"
+    },
+    "contact": {
+      "title": "Contact",
+      "emailPlaceholder": "your.email@example.com",
+      "sendButton": "Send"
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "projectZenith": {
+        "name": "Project Zenith (6 Months)",
+        "description": "Project Zenith is a cutting-edge web application developed for a tech startup. The project spanned six months and involved a team of five developers.",
+        "button": "View Project"
+      }
+    }
+  },
+  "en": {
+    "header": {
+      "title": "Godin Rémy",
+      "projects": "Projects",
+      "skills": "Skills",
+      "contact": "Contact",
+      "resume": "Resume"
+    },
+    "hero": {
+      "title": "Godin Rémy",
+      "subtitle": "Lead Web Developer",
+      "button": "View Projects"
+    },
+    "aboutMe": {
+      "title": "About Me",
+      "name": "Godin Rémy",
+      "role": "Lead Web Developer",
+      "description": "I'm a passionate web developer with a focus on creating innovative and user-friendly web applications. My goal is to blend technical expertise with creative design to deliver exceptional digital experiences."
+    },
+    "skills": {
+      "title": "Skills",
+      "javascript": "JavaScript"
+    },
+    "passions": {
+      "title": "Passions",
+      "hiking": "Hiking"
+    },
+    "contact": {
+      "title": "Contact",
+      "emailPlaceholder": "your.email@example.com",
+      "sendButton": "Send"
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "projectZenith": {
+        "name": "Project Zenith (6 Months)",
+        "description": "Project Zenith is a cutting-edge web application developed for a tech startup. The project spanned six months and involved a team of five developers.",
+        "button": "View Project"
+      }
+    }
+  }
+}
