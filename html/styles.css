@@ -6,6 +6,14 @@
     font-style: normal;
 }
 
+.imageHero{
+    position: relative;
+    top: 40px;
+    left:40px;
+    height: 512px;
+    width: 512px;
+}
+
 /* styles.css */
 body {
     font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
@@ -24,8 +32,10 @@ body {
     font-size: 100px;
     letter-spacing: 5px;
 }
-#hero{
-    background-color: #f4b940;
+
+#skills{
+
+
 }
 .projectContainer{
     background-color: white;
@@ -33,15 +43,20 @@ body {
 }
 /* Style pour la section Hero */
 .hero-section {
-    /* background-image: url('https://img.freepik.com/photos-gratuite/composition-abstraite-lumiere-ultraviolette-uv_23-2149243965.jpg?semt=ais_items_boosted&w=740');*/
+    background-image: url('contenue/heroBackground.png');
     /* background-image: linear-gradient(rgba(244, 185, 64, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), */
     background-color: #f4b940;
     font-family: 'BebasNeue', sans-serif;
    background-size: cover;
-   background-position: center;
+   background-position: bottom right;
    background-repeat: no-repeat;
 }
-
+.star {
+    color: white; /* Couleur par défaut (blanc) */
+}
+.star.filled {
+    color: #f4b940; /* Couleur pour les étoiles remplies (jaune) */
+}
 
 
 /* Style pour l'image de profil dans la section About Me */

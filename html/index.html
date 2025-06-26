@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
   <title>Stitch Design</title>
@@ -18,7 +19,7 @@
     <!-- About Me Section Component -->
     <div id="about-me"></div>
     <!-- Skills Section Component -->
-    <div id="skills"></div>
+    <div class="rounded-xl" id="skills"></div>
     <!-- Passions Section Component -->
     <div id="passions"></div>
     <!-- Contact Section Component -->
@@ -58,9 +59,10 @@
             </div>
             <div class="flex flex-1 justify-end gap-8">
               <div class="flex items-center gap-9">
-                <a class="text-white text-sm font-medium leading-normal" href="#">${t.projects}</a>
-                <a class="text-white text-sm font-medium leading-normal" href="#">${t.skills}</a>
-                <a class="text-white text-sm font-medium leading-normal" href="#">${t.contact}</a>
+                <a class="text-white text-sm font-medium leading-normal" href="#featured-projects">${t.projects}</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="#passions">${t.passion}</a>
+                <a class="text-white text-sm font-medium leading-normal" href="#skills">${t.skills}</a>
+                <a class="text-white text-sm font-medium leading-normal" href="#contact">${t.contact}</a>
               </div>
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]"
@@ -76,34 +78,33 @@
   function createHero(lang) {
     const t = translations[lang].hero;
     return `
-          <div class="px-40 flex flex-1 justify-center py-5">
-            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-              <div class="@container">
-                <div class="@[480px]:p-4">
-                  <div
-                    class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10 hero-section"
-                  >
-                    <div class="flex flex-col gap-2 text-left">
-                      <h1
-                        id="titleHero"
-                        class="text-black text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      >
-                        ${t.title}
-                      </h1>
-                      <h2 class="text-black text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">${t.subtitle}</h2>
+   <div class="px-40 flex flex-1 justify-center py-5">
+    <div class="layout-content-container flex flex-col max-w-[1080px] flex-1">
+        <div class="@container">
+            <div class="@[480px]:p-4">
+                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10 hero-section relative">
+                    <div class="flex flex-row items-end justify-between w-full">
+                        <div class="flex flex-col gap-2 text-left">
+                            <h1 id="titleHero" class="text-black text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                ${t.title}
+                            </h1>
+                            <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">${t.subtitle}</h2>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                                <span class="truncate">${t.button}</span>
+                            </button>
+                        </div>
                     </div>
-                    <button
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                    >
-                      <span class="truncate">${t.button}</span>
-                    </button>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        `;
+        </div>
+    </div>
+</div>
+
+
+    `;
   }
+
+
 
   // About Me Section Component
   function createAboutMe(lang) {
@@ -136,30 +137,128 @@
     const t = translations[lang].skills;
     const skills = [
       {
-        category: "Languages",
+        category: "IA",
         skills: [
-          { name: 'javascript', level: "4/5", icon: "Code" },
-          { name: 'PHP', level: "4/5", icon: "Code" },
-          { name: 'Python', level: "3/5", icon: "Code" },
-          { name: 'Java', level: "2/5", icon: "Code" },
-          { name: 'C++', level: "2/5", icon: "Code" },
-          { name: 'Ruby', level: "2/5", icon: "Code" },
-          { name: 'Go', level: "1/5", icon: "Code" }
+          { name: "ChatGPT, Mistral", level: "4", icon: "Code" },
+          { name: "Déploiement de modèle", level: "3", icon: "Code" },
+          { name: "Copilot", level: "4", icon: "Code" },
+          { name: "Agent", level: "3", icon: "Code" },
+          { name: "Prompt", level: "3", icon: "Code" },
+          { name: "Midjourney", level: "2", icon: "Code" },
         ]
       },
       {
-        category: "Frameworks",
+        category: "Langage de développement",
         skills: [
-          { name: 'React', level: "3/5", icon: "Code" },
-          { name: 'nodejs', level: "3/5", icon: "Code" },
-          { name: 'Django', level: "2/5", icon: "Code" },
-          { name: 'Flask', level: "2/5", icon: "Code" },
-          { name: 'Spring', level: "2/5", icon: "Code" },
-          { name: 'Rails', level: "2/5", icon: "Code" },
-          { name: 'Express', level: "2/5", icon: "Code" }
+          { name: "PHP 5,7,8", level: "4", icon: "Code" },
+          { name: "Symfony", level: "4", icon: "Code" },
+          { name: "SQL", level: "4", icon: "Code" },
+          { name: "Lua", level: "3", icon: "Code" },
+          { name: "JavaScript", level: "3", icon: "Code" },
+          { name: "TypeScript", level: "3", icon: "Code" },
+          { name: "Python", level: "2", icon: "Code" },
+          { name: "Angular", level: "2", icon: "Code" },
+          { name: "Java", level: "1", icon: "Code" },
+          { name: "C++", level: "1", icon: "Code" },
+          { name: "Node JS", level: "2", icon: "Code" }
         ]
       },
-      // Ajoutez d'autres catégories ici
+      {
+        category: "DevOps",
+        skills: [
+          { name: "GitLab CI", level: "3", icon: "Code" },
+          { name: "CI/CD", level: "3", icon: "Code" },
+          { name: "Docker", level: "4", icon: "Code" },
+          { name: "GitHub", level: "3", icon: "Code" },
+          { name: "Git", level: "3", icon: "Code" },
+          { name: "VMware", level: "2", icon: "Code" },
+          { name: "Azure DevOps", level: "2", icon: "Code" },
+          { name: "Sonar", level: "1", icon: "Code" },
+          { name: "Kubernetes (Cloud)", level: "2", icon: "Code" },
+          { name: "Kibana", level: "2", icon: "Code" }
+        ]
+      },
+      {
+        category: "Bases de données",
+        skills: [
+          { name: "Firebase Realtime Database", level: "2", icon: "Code" },
+          { name: "MySQL", level: "2", icon: "Code" },
+          { name: "PostgreSQL", level: "2", icon: "Code" },
+          { name: "MariaDB", level: "2", icon: "Code" },
+          { name: "NoSQL", level: "1", icon: "Code" }
+        ]
+      },
+
+      {
+        category: "Développement mobile",
+        skills: [
+          { name: "Swift", level: "3", icon: "Code" },
+          { name: "Mobile IOS", level: "2", icon: "Code" },
+          { name: "Flutter", level: "2", icon: "Code" },
+          { name: "Mobile Kotlin", level: "1", icon: "Code" },
+          { name: "Mobile Android", level: "2", icon: "Code" }
+        ]
+      },
+      {
+        category: "Front End",
+        skills: [
+          { name: "HTML/CSS", level: "2", icon: "Code" },
+          { name: "CSS", level: "2", icon: "Code" },
+          { name: "Vue 3", level: "1", icon: "Code" },
+          { name: "jQuery", level: "1", icon: "Code" }
+        ]
+      },
+      {
+        category: "GCP Cloud",
+        skills: [
+          { name: "GCP", level: "1", icon: "Code" }
+        ]
+      },
+      {
+        category: "Graphic Design",
+        skills: [
+          { name: "Design patterns", level: "2", icon: "Code" }
+        ]
+      },
+
+      {
+        category: "Méthodologie de développement",
+        skills: [
+          { name: "TDD", level: "2", icon: "Code" },
+          { name: "Modélisation de solution", level: "2", icon: "Code" }
+        ]
+      },
+      {
+        category: "Outils",
+        skills: [
+          { name: "Copilot", level: "3", icon: "Code" },
+          { name: "Adobe Illustrator", level: "2", icon: "Code" },
+          { name: "Adobe Photoshop", level: "2", icon: "Code" }
+        ]
+      },
+      {
+        category: "Testing",
+        skills: [
+          { name: "Automatisation des tests", level: "3", icon: "Code" },
+          { name: "Execution Test", level: "3", icon: "Code" },
+          { name: "Tests automatisés", level: "3", icon: "Code" },
+          { name: "Automatisation", level: "2", icon: "Code" },
+          { name: "Tests d'accessibilité", level: "1", icon: "Code" }
+        ]
+      },
+      {
+        category: "Méthodologies & Normes",
+        skills: [
+          { name: "REST", level: "2", icon: "Code" }
+        ]
+      },
+      {
+        category: "Rôles",
+        skills: [
+          { name: "Développeur", level: "5", icon: "Code" },
+          { name: "Lead développeur", level: "3", icon: "Code" }
+        ]
+      }
     ];
 
     let skillsHTML = `
@@ -175,20 +274,36 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-3 p-4">
             `;
 
+      function generateStarRating(level) {
+        let starsHTML = '';
+        const maxLevel = 5;
+
+        for (let i = 1; i <= maxLevel; i++) {
+          if (i <= level) {
+            starsHTML += '<span class="star filled">★</span>'; // Étoile remplie (jaune)
+          } else {
+            starsHTML += '<span class="star empty">★</span>'; // Étoile vide (blanc)
+          }
+        }
+
+        return starsHTML;
+      }
+
       // Pour chaque ligne de compétences, créer une ligne
+// Utilisation dans votre code existant
       category.skills.forEach(skill => {
         skillsHTML += `
-                    <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center max-w-xs">
-                        <div class="text-white" data-icon="${skill.icon}" data-size="24px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <h2 class="text-white text-base font-bold leading-tight">${skill.name} (${skill.level})</h2>
-                    </div>
-                `;
+        <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center max-w-xs">
+            <div class="text-white" data-icon="${skill.icon}" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                        d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
+                    ></path>
+                </svg>
+            </div>
+            <h2 class="text-white text-base font-bold leading-tight">${skill.name} ${generateStarRating(skill.level)}</h2>
+        </div>
+    `;
       });
 
       skillsHTML += `
@@ -208,7 +323,10 @@
   function createPassions(lang) {
     const t = translations[lang].passions;
     const passions = [
-      { name: t.hiking, icon: "Mountains" },
+      {name: "Musique", icon: "Musique"},
+      {name: "Guitare", icon: "Guitare"},
+      {name: "Dessiner", icon: "Dessiner"},
+      {name: "Judo", icon: "Judo"},
       // Ajoutez d'autres passions ici
     ];
     let passionsHTML = `
@@ -273,12 +391,16 @@
         description: t.projectZenith.description,
         imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
       },
-      {            name: t.projectZenith.name,
+      {
+        name: t.projectZenith.name,
         description: t.projectZenith.description,
-        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"          },
-      {            name: t.projectZenith.name,
+        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
+      },
+      {
+        name: t.projectZenith.name,
         description: t.projectZenith.description,
-        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"          },
+        imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBM-YxBde3hrEYYUpMnAh6l97DVsqul0VmlSVWmd7sY-7Ejx7JPrXtUTVW6EbaFEl2N8tBcggkpY4qwTugkvCscNbbLdOGReT5SwQRAjBHERjh7pnC4n1GCkuNVVrg7ZO0qORFxwfH0VZ8DLp6FDjNgrNV4dZCgn6boPsoFwbXOMB5WLHnb7duUAESCd2vr0fMSt_xL84GdAgngYh8r65n-SlpCs0t7GBd7W2D3E_Tx4nuKoGvWjwmiVJzlSQg5io0KqY7E9JFKZFM"
+      },
       // Ajoutez d'autres projets ici
     ];
     let projectsHTML = `
@@ -287,10 +409,10 @@
         `;
     projects.forEach(project => {
       projectsHTML += `
-            <div class="p-4 @container ">
+            <div class="p-10 @container ">
               <div class=" projectContainer flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl project-image"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl project-image" style="margin: 2em"
                 ></div>
                 <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
                   <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">${project.name}</p>
