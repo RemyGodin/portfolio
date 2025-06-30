@@ -8,6 +8,14 @@
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #backToTopBtn {
+      display: none;
+    }
+    #backToTopBtn.visible {
+      display: flex;
+    }
+  </style>
 </head>
 <body>
 <div class="relative flex size-full min-h-screen flex-col bg-[#1a1a1a] dark group/design-root overflow-x-hidden root-container">
@@ -30,8 +38,11 @@
     <div id="footer"></div>
   </div>
 </div>
+<!-- Bouton de retour en haut -->
+<button id="backToTopBtn" class="fixed bottom-5 right-5 w-12 h-12 rounded-full bg-yellow-400 text-white flex items-center justify-center text-xl shadow-lg">
+  ↑
+</button>
 <script src="script.js"></script>
-<script>
-</script>
+<script src="returnBtn.js"></script>
 </body>
 </html>
