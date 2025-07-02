@@ -16,7 +16,7 @@ function createHeader(lang) {
             
             <div class="flex flex-1 justify-center gap-8">
               <div class="flex items-center gap-9">
-                <a class="text-white text-sm-bold leading-normal" href="#featured-projects">${t.projects}</a>
+                 <a class="text-white text-sm-bold leading-normal" href="#about-me">About Me</a>
                     <a class="text-white text-sm font-medium leading-normal" href="#passions">${t.passion}</a>
                 <a class="text-white text-sm font-medium leading-normal" href="#skills">${t.skills}</a>
                 <a class="text-white text-sm font-medium leading-normal" href="#contact">${t.contact}</a>
@@ -35,7 +35,7 @@ function createHeader(lang) {
 function createHero(lang) {
     const t = translations[lang].hero;
     return `
-   <div class="px-40 flex flex-1 justify-center py-5">
+   <div class="px-40 flex flex-1 w-screen h-screen  justify-center py-5">
     <div class="layout-content-container flex flex-col max-w-[1080px] flex-1">
         <div class="@container">
             <div class="@[480px]:p-4">
@@ -67,7 +67,7 @@ function createHero(lang) {
 function createAboutMe(lang) {
     const t = translations[lang].aboutMe;
     return `
-          <section class="about-me">
+          <section class="about-me w-screen h-screen ">
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
             <div class="flex p-4 @container">
               <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between">
@@ -128,7 +128,7 @@ function createSkills(lang) {
     ];
 
     let skillsHTML = `
-            <section class="skills">
+            <section class="skills w-screen h-screen ">
                 <h2 class="text-white text-[22px]  font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
         `;
 
