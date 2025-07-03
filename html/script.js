@@ -18,6 +18,7 @@ function createHeader(lang) {
                     <a class="text-white text-xl text-bold leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#about-me">About Me</a>
                     <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#skills">${t.skills}</a>
                     <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#passions">${t.passion}</a>
+                    <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#featured-projects">${t.projects}</a>
                     <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#contact">${t.contact}</a>
                     <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#header">Resume</a>
                 </div>
@@ -221,33 +222,6 @@ function createPassions(lang) {
 }
 
 
-// Contact Section Component
-function createContact(lang) {
-    const t = translations[lang].contact;
-    return `
-          <section class="contact">
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
-                <input
-                  placeholder="${t.emailPlaceholder}"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#363636] focus:border-none h-14 placeholder:text-[#adadad] p-4 text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex px-4 py-3 justify-start">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">${t.sendButton}</span>
-              </button>
-            </div>
-          </section>
-        `;
-}
-
 // Featured Projects Section Component
 function createFeaturedProjects(lang) {
     const t = translations[lang].featuredProjects;
@@ -301,6 +275,33 @@ function createFeaturedProjects(lang) {
           </section>
         `;
     return projectsHTML;
+}
+
+// Contact Section Component
+function createContact(lang) {
+    const t = translations[lang].contact;
+    return `
+          <section class="contact w-screen h-screen ">
+            <h2 class="text-white  text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
+                <input
+                  placeholder="${t.emailPlaceholder}"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#363636] focus:border-none h-14 placeholder:text-[#adadad] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-start">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">${t.sendButton}</span>
+              </button>
+            </div>
+          </section>
+        `;
 }
 
 // Footer Component
