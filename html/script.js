@@ -202,7 +202,7 @@ function createPassions(lang) {
         `;
     passions.forEach(passion => {
         passionsHTML += `
-            <div  class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4  items-center bg-cover justify-center bg-[#f4b940]">
+            <div  class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-[#f4b940] p-4  items-center bg-cover justify-center ">
               <div class="text-black" data-icon="${passion.icon}" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
