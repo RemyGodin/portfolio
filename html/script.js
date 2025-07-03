@@ -12,24 +12,25 @@ fetch('translations.json')
 function createHeader(lang) {
     const t = translations[lang].header;
     return `
-          <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#363636] px-10 py-3">
-            
-            <div class="flex flex-1 justify-center gap-8">
-              <div class="flex items-center gap-9">
-                 <a class="text-white text-sm-bold leading-normal" href="#about-me">About Me</a>
-                    <a class="text-white text-sm font-medium leading-normal" href="#passions">${t.passion}</a>
-                <a class="text-white text-sm font-medium leading-normal" href="#skills">${t.skills}</a>
-                <a class="text-white text-sm font-medium leading-normal" href="#contact">${t.contact}</a>
-              </div>
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">${t.resume}</span>
-              </button>
+        <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-1/2 bg-black rounded-lg z-50 border-b border-solid border-b-[#363636] px-10 py-3">
+            <div class="flex justify-center gap-8">
+                <div class="flex items-center gap-9">
+                    <a class="text-white text-sm-bold leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#about-me">About Me</a>
+                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#passions">${t.passion}</a>
+                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#skills">${t.skills}</a>
+                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#contact">${t.contact}</a>
+                </div>
+                <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-black transition-colors duration-300"
+                >
+                    <span class="truncate">${t.resume}</span>
+                </button>
             </div>
-          </header>
-        `;
+        </header>
+    `;
 }
+
+
 
 // Hero Section Component
 function createHero(lang) {
@@ -189,10 +190,10 @@ function createSkills(lang) {
 function createPassions(lang) {
     const t = translations[lang].passions;
     const passions = [
-        {name: "Musique", icon: "Musique"},
-        {name: "Guitare", icon: "Guitare"},
-        {name: "Dessiner", icon: "Dessiner"},
-        {name: "Judo", icon: "Judo"},
+        {name: "Musique", icon: "Musique", backgroundImg: "contenue/bgJudo2.jpg"},
+        {name: "Guitare", icon: "Guitare", backgroundImg:"contenue/déco.png"},
+        {name: "Dessiner", icon: "Dessiner", backgroundImg: "contenue/déco.png"},
+        {name: "Judo", icon: "Judo", backgroundImg: "contenue/déco.png"},
         // Ajoutez d'autres passions ici
     ];
     let passionsHTML = `
@@ -202,15 +203,15 @@ function createPassions(lang) {
         `;
     passions.forEach(passion => {
         passionsHTML += `
-            <div  class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4  items-center justify-center bg-[url(contenue/bgCard.jpg)]">
-              <div class="text-white" data-icon="${passion.icon}" data-size="24px" data-weight="regular">
+            <div  class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4  items-center bg-cover justify-center bg-[#f4b940]">
+              <div class="text-black" data-icon="${passion.icon}" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
                     d="M164,80a28,28,0,1,0-28-28A28,28,0,0,0,164,80Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,40Zm90.88,155.92-54.56-92.08A15.87,15.87,0,0,0,186.55,96h0a15.85,15.85,0,0,0-13.76,7.84L146.63,148l-44.84-76.1a16,16,0,0,0-27.58,0L1.11,195.94A8,8,0,0,0,8,208H248a8,8,0,0,0,6.88-12.08ZM88,80l23.57,40H64.43ZM22,192l33-56h66l18.74,31.8,0,0L154,192Zm150.57,0-16.66-28.28L186.55,112,234,192Z"
                   ></path>
                 </svg>
               </div>
-              <h2 class="text-white text-base font-bold leading-tight">${passion.name}</h2>
+              <h2 class="text-black text-2xl font-bold text-base font-bold leading-tight">${passion.name}</h2>
             </div>
           `;
     });
