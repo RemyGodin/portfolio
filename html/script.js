@@ -35,7 +35,7 @@ function createHeader(lang) {
 function createHero(lang) {
     const t = translations[lang].hero;
     return `
-   <div class="px-40 flex flex-1 w-screen h-screen  justify-center py-5">
+   <div class="px-40 flex flex-1 w-screen h-screen  justify-center py-5 pt-[80px]">
     <div class="layout-content-container flex flex-col max-w-[1080px] flex-1">
         <div class="@container">
             <div class="@[480px]:p-4">
@@ -56,8 +56,6 @@ function createHero(lang) {
         </div>
     </div>
 </div>
-
-
     `;
 }
 
@@ -67,10 +65,10 @@ function createHero(lang) {
 function createAboutMe(lang) {
     const t = translations[lang].aboutMe;
     return `
-          <section class="about-me w-screen h-screen ">
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
+          <section class="about-me w-screen h-screen pt-[80px]">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 ">${t.title}</h2>
             <div class="flex p-4 @container">
-              <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between">
+              <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between ">
                 <div class="flex gap-4">
                   <div
                     class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl min-h-32 w-32 profile-image"
@@ -128,7 +126,7 @@ function createSkills(lang) {
     ];
 
     let skillsHTML = `
-            <section class="skills w-screen h-screen ">
+            <section class="skills w-screen h-screen pt-[80px]">
                 <h2 class="text-white text-[22px]  font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
         `;
 
@@ -196,8 +194,8 @@ function createPassions(lang) {
         // Ajoutez d'autres passions ici
     ];
     let passionsHTML = `
-        <section class="passions w-screen h-screen flex flex-col">
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
+        <section class="passions w-screen h-screen flex flex-col pt-[80px]">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 ">${t.title}</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4 flex-grow">
         `;
     passions.forEach(passion => {
@@ -245,7 +243,7 @@ function createFeaturedProjects(lang) {
     ];
     let projectsHTML = `
           <section class="featured-projects">
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
+            <h2 class="pt-[80px] text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">${t.title}</h2>
         `;
     projects.forEach(project => {
         projectsHTML += `
