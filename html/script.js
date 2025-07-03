@@ -12,7 +12,7 @@ fetch('translations.json')
 function createHeader(lang) {
     const t = translations[lang].header;
     return `
-            <header class="fixed top-4 bg-black rounded-full z-50 border-b border-solid border-b-[#363636] px-10 py-3 mx-auto" style="left: 0; right: 0; width: fit-content;">
+            <header class="fixed top-4 bg-[#1a1a1a] rounded-full z-50   px-10 py-3 mx-auto" style="left: 0; right: 0; width: fit-content;">
             <div class="flex justify-center gap-8">
                 <div class="flex items-center gap-9">
                     <a class="text-white text-xl text-bold leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#about-me">About Me</a>
@@ -136,7 +136,7 @@ function createSkills(lang) {
     skills.forEach(category => {
         skillsHTML += `
                 <div class="category">
-                    <h3 class="text-white text-lg font-bold leading-tight px-4 pb-3 pt-5">${category.category}</h3>
+                    <h3 class="text-black text-lg font-bold leading-tight px-4 pb-3 pt-5">${category.category}</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-3 p-4">
             `;
 
@@ -159,7 +159,7 @@ function createSkills(lang) {
 // Utilisation dans votre code existant
         category.skills.forEach(skill => {
             skillsHTML += `
-        <div class="flex flex-1 gap-3 rounded-lg border border-[#4d4d4d] bg-neutral-800 p-4 items-center max-w-xs">
+        <div class="flex flex-1 gap-3 rounded-lg  bg-[#1a1a1a]  p-4 items-center max-w-xs">
             <div class="text-white" data-icon="${skill.icon}" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                     <path
