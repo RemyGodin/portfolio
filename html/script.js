@@ -12,19 +12,17 @@ fetch('translations.json')
 function createHeader(lang) {
     const t = translations[lang].header;
     return `
-        <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-1/2 bg-black rounded-lg z-50 border-b border-solid border-b-[#363636] px-10 py-3">
+            <header class="fixed top-4 bg-black rounded-full z-50 border-b border-solid border-b-[#363636] px-10 py-3 mx-auto" style="left: 0; right: 0; width: fit-content;">
             <div class="flex justify-center gap-8">
                 <div class="flex items-center gap-9">
-                    <a class="text-white text-sm-bold leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#about-me">About Me</a>
-                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#passions">${t.passion}</a>
-                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#skills">${t.skills}</a>
-                    <a class="text-white text-sm font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded transition-colors duration-300" href="#contact">${t.contact}</a>
+                    <a class="text-white text-xl text-bold leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#about-me">About Me</a>
+                    <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#skills">${t.skills}</a>
+                    <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#passions">${t.passion}</a>
+                    <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#contact">${t.contact}</a>
+                    <a class="text-white text-xl font-medium leading-normal hover:bg-white hover:text-black px-3 py-1 rounded-full transition-colors duration-300" href="#header">Resume</a>
                 </div>
-                <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-black transition-colors duration-300"
-                >
-                    <span class="truncate">${t.resume}</span>
-                </button>
+             
+               
             </div>
         </header>
     `;
